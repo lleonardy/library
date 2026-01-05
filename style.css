@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(imgs/bgwood.webp);
+    background-position: center;
+    background-size: cover;
+    font-family: "Inter", sans-serif;
+}
+
+.container {
+    /* border: 1px solid black; */
+    /* border-radius: 1rem; */
+    width: 80%;
+    height: 95%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    /* background-image: url(imgs/bgwood.webp); */
+    background-size: cover;
+    background-position: top;
+    color: white;
+}
+
+.header > h1 {
+    background-image: url(imgs/bgframe.webp);
+    background-position: center;
+    background-size: cover;
+    padding: 6px 2rem;
+    color: rgba(255, 255, 255, 0.974);
+    border: 1px solid rgba(0, 0, 0, 0.271);
+    border-radius: 0.3rem;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+    transition: scale 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+  font-family: "EB Garamond", serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    cursor: default;
+}
+
+.header > h1:hover {
+    scale: 1.15;
+    transform: rotate(3deg);
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: auto;
+}
+
+.buttons > button {
+    appearance: unset;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    background-color: rgba(212, 212, 212, 0.047);
+    color: rgba(255, 255, 255, 0.934);
+    border-radius: 0.5rem;
+    border: 1.5px solid rgba(0, 0, 0, 0.357);
+    box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.542);
+                      
+    font-weight: 500;
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+    filter: brightness(1.2);
+}
+
+.buttons > button:hover {
+    background-color: rgba(12, 12, 12, 0.047);
+    color: rgba(198, 198, 198, 0.934);
+}
+
+dialog {
+    border: none;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding: 2.5rem;
+    width: 500px;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    background-color: rgb(255, 249, 237);
+    box-shadow: 0px 2px 60px rgba(0, 0, 0, 0.6);
+    font-family: "EB Garamond", serif;
+
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+}
+
+dialog[open]::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+dialog[open] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+dialog h2 {
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 85%;
+    height: 2.5rem;
+    padding-left: 12px;
+    background-color: rgb(253, 251, 245);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 0.4rem;
+    /* box-shadow: inset 0px 0px 6px 3px rgba(0, 0, 0, 0.05); */
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#checkbox {
+    width: fit-content;
+    height: fit-content;
+}
+
+select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+menu {
+    margin-top: 1rem;
+    display: flex;
+    gap: 12px;
+}
+
+menu > button {
+    appearance: unset;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    background-color: rgb(147, 104, 18);
+    color: white;
+    border-radius: 0.5rem;
+    border: 1.5px solid rgba(0, 0, 0, 0.4);
+    /* box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.542); */
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+                      
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+menu > button:hover {
+    background-color: rgb(125, 88, 14);
+}
+
+#btn-cancel {
+    background-color: transparent;
+    color: rgb(126, 86, 6);
+    box-shadow: none;
+}
+
+#book-display {
+    padding: 2rem 5rem;
+    background-image: url(imgs/bgwood.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-rows: min-content;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 1.5rem;
+    overflow: auto;
+    box-shadow: inset 0px 8px 30px rgba(0, 0, 0, 0.8);
+}
+
+#book-display::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.book {
+    position: relative;
+    width: 200px;
+    height: 290px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.3rem;
+    box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.8);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background-image: url(imgs/cover.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: box-shadow 0.2s ease,
+                border-color 0.2s ease,
+                scale 0.2s ease;
+    
+}
+
+.book:hover {
+    box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.5);
+    /* border-color: rgba(255, 255, 255, 0.1); */
+    scale: 1.1;
+}
+
+.book-title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    cursor: default;
+}
+
+.book-title > .author {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.book-footer {
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.book-footer p {
+    opacity: 0;
+    cursor: default;
+}
+
+.isReadBtn {
+    appearance: unset;
+    left: 65px;
+    padding: 6px;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    width: fit-content;
+    transition: color 0.2s ease,
+                background-color 0.2s ease;
+}
+
+.isReadBtn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.908);
+}
+
+.removeBtn {
+    appearance: unset;
+    height: 25px;
+    width: 25px;
+    border: none;
+    border-radius: 0.3rem;
+    font-weight: 500;
+    background-color: rgba(255, 0, 0, 0.251);
+    color: white;
+    transition: color 0.2s ease,
+                opacity 0.2s ease,
+                background-color 0.2s ease,
+                box-shadow 0.2s ease;
+    
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+}
+
+.book:hover .removeBtn {
+    opacity: 1;
+    pointer-events: auto;
+    color: white;
+}
+
+.removeBtn:hover {
+    color: white;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.801);
+    background-color: rgba(255, 0, 0, 0.693);
+}

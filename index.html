@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>My Library</h1>
+            <div class="buttons">
+                <button id="btn-add">Add new book</button>
+                <dialog id="add-modal">
+                    <form id="add-form" method="dialog">
+                        <h2>Add New Book</h2>
+
+                        <input type="text" name="title" placeholder="Book Title" required>
+                        <input type="text" name="author" placeholder="Author Name" required>
+                        <input type="number" name="pages" placeholder="Page Number" required>
+                        <input type="number" name="year" placeholder="Year Published" required>
+                        <input type="url" name="cover" placeholder="Cover Url">
+
+                        <label>
+                            <input type="checkbox" name="isRead" id="checkbox">
+                            Had been read ?
+                        </label>
+
+                        <menu>
+                            <button type="button" value="cancel" id="btn-cancel">Cancel</button>
+                            <button type="submit">Add Book</button>
+                        </menu>
+                    </form>
+                </dialog>
+            </div>
+        </div>
+        <div id="book-display">
+
+        </div>
+    </div>
+</body>
+</html>
